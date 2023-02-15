@@ -5,10 +5,10 @@ from .models import *
 from traits.models import Trait
 from groups.models import Group
 from django.shortcuts import get_object_or_404
-from pet_kare.pagination import CustomPageNumberPagination
+from pet_kare.pagination import CustomPagination
 
 
-class PetsView(APIView, CustomPageNumberPagination):
+class PetsView(APIView, CustomPagination):
 
     def get(self, request: Request):
         trait_name = request.query_params.get("trait", None)
