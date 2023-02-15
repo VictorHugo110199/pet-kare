@@ -82,7 +82,7 @@ class PetViewsTest(APITestCase):
 
         results = response.json()["results"]
         for r in results:
-            r.pop('pets', '')
+            r.pop("pets", "")
         self.assertEqual(len(results), expected, message)
 
         group_dict = {**model_to_dict(pet1.group), "created_at": mock_now.return_value}
@@ -110,8 +110,8 @@ class PetViewsTest(APITestCase):
             "traits": [trait1_dict, trait2_dict],
             "group": group_dict,
         }
-        [a.pop('pets','') for a in pet_dict_1["traits"]]
-        [a.pop('pets','') for a in pet_dict_2["traits"]]
+        [a.pop("pets", "") for a in pet_dict_1["traits"]]
+        [a.pop("pets", "") for a in pet_dict_2["traits"]]
         pets = [pet_dict_1, pet_dict_2]
 
         message = "Verifique se sua rota está retornando todos os campos corretamente."
@@ -190,7 +190,6 @@ class PetViewsTest(APITestCase):
         self.assertEqual(trait2.id, response.json()["traits"][1]["id"], message)
 
     def test_can_not_create_pet_when_missing_keys(self):
-
         response = self.client.post(
             self.BASE_URL,
             {},

@@ -98,7 +98,7 @@ class PetDetailViewsTest(APITestCase):
             **model_to_dict(pet1.traits.all()[0]),
             "created_at": mock_now.return_value,
         }
-        trait1_dict.pop('pets', '')
+        trait1_dict.pop("pets", "")
         trait1_name = trait1_dict.pop("name")
         trait1_dict.update({"trait_name": trait1_name})
         # trait2_dict = {

@@ -7,7 +7,6 @@ from traits.models import Trait
 def create_multiple_pets(
     group_data: dict, pet_count: int, traits_data: list | None = None
 ) -> QuerySet[Pet]:
-
     pets_data = [
         {
             "name": f"strogonoff {index}",
@@ -20,7 +19,9 @@ def create_multiple_pets(
 
     group_obj = Group.objects.create(**group_data)
 
-    pets_objects = [Pet.objects.create(**pet_dict, group=group_obj) for pet_dict in pets_data]
+    pets_objects = [
+        Pet.objects.create(**pet_dict, group=group_obj) for pet_dict in pets_data
+    ]
 
     if traits_data:
         for trait_dict in traits_data:
