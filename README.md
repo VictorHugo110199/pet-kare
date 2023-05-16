@@ -1,5 +1,17 @@
 # M5 - Pet Kare
 
+## 1. Visão Geral
+
+Visão geral do projeto, um pouco das tecnologias usadas.
+
+- Django
+- Djangorestframework
+- Python
+- Render
+- Pytest-django
+- Pytest-testdox
+- Sqlite
+
 ## Como rodar os testes localmente
 
 - Verifique se os pacotes pytest e/ou pytest-testdox estão instalados globalmente em seu sistema:
